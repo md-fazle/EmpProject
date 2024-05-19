@@ -1,0 +1,39 @@
+﻿@model List<EmployeeManagementSystem.Models.Items.Item>
+
+<h1>List of Items</h1>
+
+<table class="table">
+    <thead>
+    <th>ItemId</th>
+    <th>Code</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </thead>
+    <tbody>
+        @foreach (var items in Model)
+        {
+            <tr>
+                <td>@items.ItemId</td>
+                <td>@items.Code</td>
+                <td>@items.Name</td>
+                <td>@items.Price</td>
+                <td>@items.Type</td>
+                <td>@items.Description</td>
+                <td>
+                    <a type="submit" class="btn btn-primary" asp-controller="Item" asp-action="Edit" asp-route-id="">Edit</a>
+                </td>
+                <td>
+                    <form asp-action="" asp-controller="" asp-route-id="" method="post">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+
+</table>
